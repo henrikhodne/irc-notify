@@ -1,7 +1,8 @@
+require "socket"
+
 module IrcNotify
   class Client
     def self.build(host, port = 6667, options = {})
-      require "socket"
       socket = TCPSocket.new(host, port)
       if options[:ssl]
         require "openssl"
